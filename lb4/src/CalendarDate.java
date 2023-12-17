@@ -4,9 +4,19 @@ public class CalendarDate implements Comparable<CalendarDate> {
 
     public int compareTo(CalendarDate other) {
         if (this.month != other.month) {
-            return Integer.compare(other.month, this.month);
+            if (this.month < other.month) {
+                return -1;
+            } else {
+                return 1;
+            }
         } else {
-            return Integer.compare(other.days, this.days);
+            if (this.days < other.days) {
+                return -1;
+            } else if (this.days == other.days) {
+                return 0;
+            } else {
+                return 1;
+            }
         }
     }
 
